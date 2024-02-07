@@ -8,4 +8,6 @@ public interface ILibroServicio {
     public Libro listarLibroPorId(Integer idLibro);
     public void guardarLibro(Libro libro);
     public void eliminarLibro(Libro libro);
+
+    public boolean existeLibro(String nombreLibro);
 }

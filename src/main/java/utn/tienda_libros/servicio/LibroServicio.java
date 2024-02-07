@@ -32,4 +32,16 @@ public class LibroServicio implements ILibroServicio{
     public void eliminarLibro(Libro libro) {
         libroRepositorio.delete(libro);
     }
+
+    @Override
+    public boolean existeLibro(String nombreLibro) {
+        List<Libro> libros = libroRepositorio.findAll();
+        for(Libro libro: libros){
+            String nombre = libro.getNombreLibro();
+            if(nombre.equals(nombreLibro)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
